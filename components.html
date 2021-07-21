@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div id = 'app'>
+</div>
+<script src = './dist/umd/vue.js'></script>
+<script>
+  // 为什么拆分组件
+  // 1. -> 实现复用
+  // 2. -> 方便维护
+  // 3. -> 编写组件能拆分的尽量拆分
+  //    -> 每个组件会有一个 自己的 watcher , 这样更新范围会减小
+
+
+  // 全局组件
+  Vue.component('my-button', {
+    template: '<div> 点我 </div>>'
+  })
+  const vue = new Vue({
+    el: '#app',
+    template: '<div> hello </div>',
+    data: {
+      firstName: '张',
+      lastName: '三'
+    },
+    components: {
+      aaa: {
+        template: '<div> 点我 </div>'
+      }
+    }
+  })
+
+  // 组件可能是一个对象,或者也可能是一个构造函数
+  console.log(vue)
+</script>
+</body>
+</html>

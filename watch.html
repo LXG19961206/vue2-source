@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<div
+  style = "color: red"
+  id ='app'
+  class = 'lala是'>
+  <span>  {{ a }} </span>
+</div>
+<script src = './dist/umd/vue.js'></script>
+<script>
+  let vue = new Vue({
+    el: '#app',
+    data : {
+      a: 1
+    },
+    watch: {
+      'a' (n,o) {
+        console.log(n,o)
+      }
+    }
+  })
+
+  // 渲染的操作,
+  // - 默认会先找 render 方法
+  // - 如果没有 render 方法, 会找 template
+  //   - 会使用 AST 将 template 解析为 render 函数
+  // - 如果连 template 都没有, 会找 el 当前指定元素中的内容来渲染页面
+
+
+</script>
+</body>
+</html>
