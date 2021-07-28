@@ -1,5 +1,5 @@
 import { mergeOptions } from '../util'
-import {initExtend} from "./extent";
+import { initExtend } from "./extent";
 export function initGlobalApi (Vue) {
     // 整个了 所有的全局相关的内容
     Vue.options = {}
